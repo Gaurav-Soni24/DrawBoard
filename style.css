@@ -12,19 +12,20 @@ body {
     min-height: 100vh;
     background: #fdced6;
     flex-direction: column;
+    padding: 20px;
 }
 
-.logo h1{
+.logo h1 {
     font-size: 55px;
-    font-weight: 500; 
+    font-weight: 500;
     font-family: 'Sevillana', cursive;
-    
 }
-.logo h1 span{
+
+.logo h1 span {
     font-weight: 700;
-    font-family: 80px;
+    font-size: 80px;
     color: #fc002a;
-    font-family: 'Cute Font', sans-serif
+    font-family: 'Cute Font', sans-serif;
 }
 
 .container {
@@ -33,15 +34,17 @@ body {
     gap: 10px;
     padding: 10px;
     max-width: 1200px;
+    flex-direction: column;
 }
 
 section {
     background: #fff;
     border-radius: 7px;
+    width: 100%;
 }
 
 .tools-board {
-    width: 210px;
+    width: 100%;
     padding: 15px 22px 0;
 }
 
@@ -136,20 +139,18 @@ section {
     border-radius: inherit;
     border: 2px solid #fff;
     transform: translate(-50%, -50%);
-
 }
 
-.colors .option:first-child.selected::before{
+.colors .option:first-child.selected::before {
     border-color: #ccc;
 }
 
-.options #color-picker{
+.options #color-picker {
     opacity: 0;
     cursor: pointer;
-
 }
 
-.buttons button{
+.buttons button {
     width: 100%;
     color: #fff;
     border: none;
@@ -162,18 +163,18 @@ section {
     cursor: pointer;
 }
 
-.buttons .clear-canvas{
+.buttons .clear-canvas {
     color: #6c757d;
     border: 1px solid #6c757d;
     transition: all .3s ease;
 }
 
-.clear-canvas:hover{
+.clear-canvas:hover {
     color: #fff;
     background: #6c757d;
 }
 
-.buttons .save-img{
+.buttons .save-img {
     background: #4a98f7;
     border: 1px solid #4a98f7;
 }
@@ -182,7 +183,39 @@ section {
     flex: 1;
 }
 
-.drawing-board canvas{
+.drawing-board canvas {
     width: 100%;
     height: 100%;
+}
+
+@media (min-width: 600px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .tools-board {
+        width: 210px;
+    }
+
+    .drawing-board {
+        flex: 1;
+    }
+}
+
+@media (max-width: 599px) {
+    .logo h1 {
+        font-size: 35px;
+    }
+
+    .logo h1 span {
+        font-size: 50px;
+    }
+
+    .tools-board, .drawing-board {
+        width: 100%;
+    }
+
+    .buttons button {
+        font-size: .8rem;
+    }
 }
